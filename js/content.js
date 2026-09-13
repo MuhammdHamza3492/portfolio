@@ -1,8 +1,8 @@
 window.PORTFOLIO = {
   name: "Muhammad Hamza",
   initials: "MH",
-  title: "AI + SaaS Builder + Senior Software Engineer",
-  titleAlt: "Operations Manager",
+  title: "Software Engineer",
+  titleAlt: "Project Manager",
   status: "available",
   year: "2026",
   location: "Dubai, UAE",
