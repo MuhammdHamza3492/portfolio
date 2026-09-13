@@ -3,9 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Hamza</title>
+    <title>Hamza — Choose a portfolio template</title>
+    <link rel="stylesheet" href="css/chooser.css" />
   </head>
   <body>
-    <h1>hello Hamza</h1>
+    <div class="wrap">
+      <div class="kicker"><i></i> Template picker</div>
+      <h1>Choose a <em>direction</em></h1>
+      <p class="lede">
+        Four layouts modeled on the
+        <b>information architecture</b> of
+        <a href="https://ahmadijaz.github.io/Portfolio/">Ahmad Ijaz’s portfolio</a>:
+        hero, voice toggle, skills, metrics, long case studies, earlier work, about, and contact.
+        Copy is placeholder — we will swap in your content next.
+      </p>
+
+      <div class="grid">
+        <a class="card" href="templates/editorial.html">
+          <div class="preview p-editorial"><span>I build the<br /><b>systems</b></span></div>
+          <div class="meta">
+            <h2>01 — Editorial</h2>
+            <p>Matches the reference layout: dark canvas, mint accent, uppercase headline, glass case cards, photo, Engineer / PM toggle.</p>
+            <span class="go">Open template →</span>
+          </div>
+        </a>
+
+        <a class="card" href="templates/atelier.html">
+          <div class="preview p-atelier"><i></i><span>I build the systems</span></div>
+          <div class="meta">
+            <h2>02 — Atelier</h2>
+            <p>Light magazine. Cream paper, rust italic serif, ruled columns, newsprint metrics. Best if you want a quieter, print-like feel.</p>
+            <span class="go">Open template →</span>
+          </div>
+        </a>
+
+        <a class="card" href="templates/signal.html">
+          <div class="preview p-signal"><span>sys / ready</span></div>
+          <div class="meta">
+            <h2>03 — Signal</h2>
+            <p>Terminal-adjacent engineer look. Sticky left nav, lime on near-black, mono labels, compact case cards.</p>
+            <span class="go">Open template →</span>
+          </div>
+        </a>
+
+        <a class="card" href="templates/rail.html">
+          <div class="preview p-rail"><span>Hamza</span></div>
+          <div class="meta">
+            <h2>04 — Rail</h2>
+            <p>Studio split. Dark identity rail on the left, warm paper content on the right, soft cards and serif headlines.</p>
+            <span class="go">Open template →</span>
+          </div>
+        </a>
+      </div>
+
+      <p class="note">All four read from js/content.js — change the content once, every template updates.</p>
+    </div>
   </body>
 </html>
