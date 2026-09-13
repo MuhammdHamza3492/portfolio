@@ -1,7 +1,7 @@
 window.PORTFOLIO = {
   name: "Muhammad Hamza",
   initials: "MH",
-  title: "Software Engineer",
+  title: "Lead Full-Stack & Systems Engineer",
   titleAlt: "Project Manager",
   status: "available",
   year: "2026",
@@ -9,26 +9,27 @@ window.PORTFOLIO = {
   phone: "+971528059211",
   photo: "images/hamza.jpg",
   headlineLead: "I build the",
-  headlineWords: ["games", "systems", "products", "platforms"],
+  headlineWords: ["systems", "platforms", "products", "games"],
   headlineWordsPm: ["operations", "projects", "products", "teams"],
   headlineTail: "that scale.",
   sub: {
-    engineer: "Best at — <b>AI + SaaS + Software + Application + Web</b>",
+    engineer: "Best at — <b>AI + SaaS + Applications + Software + Web</b>",
     pm: "Best at — <b>Project + Business Development</b>",
   },
   intro: {
     engineer:
-      "<b>Full-Stack & Game Engineer</b> with a track record of architecting, optimizing, and deploying <b>220+</b> mobile and enterprise titles. Specialized in Unity C# engines, custom ad mediation plugins, low-latency multiplayer systems, and high-throughput iGaming platform backends supporting over <b>$3M</b> in daily transactional volume.",
+      "<b>Lead Full-Stack & Systems Engineer</b> with <b>8+ years</b> building enterprise web platforms, high-throughput B2B API infrastructure, and low-latency client applications. Proven track record architecting end-to-end iGaming CRMs processing <b>$3M+</b> in daily transactional volume, engineering custom B2B API distribution gateways, building proprietary slot engines, and deploying non-custodial crypto payment ecosystems alongside <b>220+</b> published games.",
     pm: "<b>Technical Project Manager and Operations Lead</b> with cross-functional experience scaling game studios from <b>3 to 60+</b> team members. Proven track record of managing multi-project portfolios, executing international B2B client expansions, and delivering <b>$1M+</b> revenue products across iGaming, Web3, and mobile publishing verticals.",
   },
   skills: [],
   skillsPm: [],
   skillGroups: [
     {
-      label: "Engineering",
+      label: "Core Engineering & Web",
       items: [
-        "Unity",
-        "C#",
+        "AI",
+        "Cursor",
+        "Claude",
         "Laravel / PHP",
         "React.js",
         "Node.js",
@@ -36,21 +37,37 @@ window.PORTFOLIO = {
         "Angular",
         "PostgreSQL",
         "MySQL",
+        "REST APIs",
+        "Webhooks",
       ],
     },
     {
-      label: "Infrastructure",
-      items: ["AWS", "DigitalOcean", "Docker", "S3", "CI/CD", "Webhooks", "REST APIs"],
+      label: "Platform Architecture & Cloud",
+      items: [
+        "AWS (S3 / EC2)",
+        "DigitalOcean",
+        "Docker",
+        "CI/CD Pipelines",
+        "High-Concurrency Caching",
+        "B2B Microservices",
+      ],
     },
     {
-      label: "Monetization & Web3",
+      label: "Fintech, Payments & Web3",
       items: [
-        "AdMob",
-        "ironSource",
-        "AppLovin",
         "NowPayments",
         "CoinPayments",
-        "Web3 / NFTs",
+      ],
+    },
+    {
+      label: "Game & Client Development",
+      items: [
+        "Unity",
+        "C#",
+        "Slot Engine Architecture",
+        "Custom Ad Mediation",
+        "AdMob / ironSource / AppLovin",
+        "Low-Latency Multiplayer",
       ],
     },
   ],
@@ -89,10 +106,11 @@ window.PORTFOLIO = {
   ],
   stats: {
     engineer: [
-      { value: "50M+", label: "total game downloads" },
       { value: "220+", label: "mobile & web titles shipped" },
       { value: "$3M/day", label: "peak system transaction volume" },
-      { value: "4", label: "global app stores (Play, App Store, Huawei, Amazon)" },
+      { value: "50M+", label: "total game downloads" },
+      { value: "5", label: "cross functional teams" },
+      { value: "60+", label: "team members managed" },
     ],
     pm: [
       { value: "60+", label: "team members managed (5 departments)" },
@@ -103,8 +121,82 @@ window.PORTFOLIO = {
   },
   featured: [
     {
+      title: "MSAI — Multi-Channel AI",
+      kicker: "node · typescript · meta apis · dubai",
+      id: "msai",
+      images: [
+        { src: "images/msai/landing.jpg", label: "MSAI Marketing Landing" },
+        { src: "images/msai/overview.png", label: "MSAI Dashboard Overview" },
+        {
+          src: "images/msai/chats.png",
+          label: "MSAI Chats & Lead Inbox",
+          privacyMasks: [
+            // chat list — names & phone numbers
+            { left: "17%", top: "12%", width: "19%", height: "82%" },
+            // conversation header — contact name
+            { left: "39%", top: "4.5%", width: "22%", height: "7%" },
+            // details pane — name & phone
+            { left: "77%", top: "8%", width: "20%", height: "14%" },
+          ],
+        },
+      ],
+      lede: {
+        engineer:
+          "As <b>Lead AI & Full-Stack Engineer</b> at MSAI (Missing Source — Dubai, UAE), I architected and deployed an enterprise multi-channel AI receptionist and customer communication engine across WhatsApp Cloud API, Instagram, Telegram, and Facebook Messenger.",
+        pm: "As <b>Product Lead & AI Solutions Architect</b> at MSAI (Missing Source — Dubai, UAE), I spearheaded product vision, architecture, and commercial roadmap for a multi-channel AI receptionist platform engineered to automate customer acquisition across Dubai and the broader MENA region.",
+      },
+      bullets: {
+        engineer: [
+          "Architected and deployed MSAI, an enterprise multi-channel AI receptionist and customer communication engine operating across WhatsApp Cloud API, Instagram, Telegram, and Facebook Messenger.",
+          "Engineered a high-throughput webhook gateway processing real-time incoming messages across Meta APIs, Telegram, and custom web triggers into a unified message processing pipeline.",
+          "Designed stateful system prompt architectures, multi-turn conversation memory, and context injection flows for automated booking, client qualification, and dynamic FAQ resolution.",
+          "Built automated appointment scheduling workflows, calendar sync integrations, and multi-channel notification triggers to streamline customer acquisition.",
+          "Developed scalable backend microservices built with Node.js and TypeScript, ensuring sub-second LLM response latency and zero message loss under concurrent traffic.",
+        ],
+        pm: [
+          "Spearheaded product vision, architecture, and commercial roadmap for MSAI—a multi-channel AI receptionist platform engineered to automate customer acquisition across Dubai and the broader MENA region.",
+          "Mapped end-to-end customer conversation journeys, booking workflow funnels, and dynamic lead scoring logic across WhatsApp, Instagram DM, Messenger, and Telegram.",
+          "Managed enterprise client onboarding—overseeing custom AI prompt customization, brand tone alignment, and system integration with client CRMs.",
+          "Led Agile sprint execution, Meta Cloud API policy compliance, and cross-channel integration testing to ensure high system availability.",
+        ],
+      },
+      role: {
+        engineer: "Lead AI & Full-Stack Engineer — MSAI (Missing Source — Dubai, UAE)",
+        pm: "Product Lead & AI Solutions Architect — MSAI (Missing Source — Dubai, UAE)",
+      },
+      tech: [
+        "Node.js",
+        "TypeScript",
+        "WhatsApp Cloud API",
+        "Meta Graph API",
+        "Telegram Bot API",
+        "LLM Prompt Architecture",
+        "RESTful Webhooks",
+        "PostgreSQL",
+      ],
+      techPm: [
+        "AI Product Ownership",
+        "Conversational UI/UX Design",
+        "Meta API Compliance",
+        "Client Solutions Architecture",
+        "Agile Delivery",
+      ],
+    },
+    {
       title: "AnteChip — Enterprise iGaming & Web3 Platform",
       kicker: "laravel · react · aws · api gateway · dubai",
+      id: "antechip",
+      images: [
+        { src: "images/antechip/01-antechip-platform.jpg", label: "AnteChip Platform" },
+        { src: "images/antechip/02-artchip-lobby.jpg", label: "ArtChip Lobby" },
+        { src: "images/antechip/03-casino-experience.jpg", label: "Casino Experience" },
+        { src: "images/antechip/04-paragon-casino.jpg", label: "Paragon Casino" },
+        { src: "images/antechip/05-paragon-alt.jpg", label: "Paragon Casino Alt" },
+        { src: "images/antechip/06-lottomen.jpg", label: "LottoMen" },
+        { src: "images/antechip/07-ledgen.jpg", label: "LEDGEN Skincare" },
+        { src: "images/antechip/09-settlements-admin.jpg", label: "Settlements Admin" },
+        { src: "images/antechip/10-recharge-requests.jpg", label: "Money Recharge Requests" },
+      ],
       lede: {
         engineer:
           "As <b>Senior Full-Stack & Systems Engineer</b> I architected an enterprise iGaming platform from scratch — Player, Admin, and Affiliate portals — supporting <b>10K+ DAU</b>, <b>100K+ daily bets</b>, and <b>$1M–$3M</b> in daily transactional volume on Laravel, React, Node, TypeScript, and cloud infra.",
@@ -149,6 +241,14 @@ window.PORTFOLIO = {
     {
       title: "CodeXLayer — Studio Systems & Scale",
       kicker: "unity · ads mediation · 200+ titles · 50m+ downloads",
+      id: "codexlayer",
+      images: [
+        { src: "images/codexlayer/01-bus-station.jpg", label: "Bus Station Simulator" },
+        { src: "images/codexlayer/02-city-chase.jpg", label: "City Chase Action" },
+        { src: "images/codexlayer/03-spider-combat.jpg", label: "Spider Combat" },
+        { src: "images/codexlayer/04-hero-rescue.jpg", label: "Hero Rescue" },
+        { src: "images/codexlayer/05-dragon-robot.jpg", label: "Dragon vs Robot" },
+      ],
       lede: {
         engineer:
           "As <b>Lead Software Engineer (Founding Developer)</b> I architected the studio’s foundational game templates and core systems from scratch, scaling technical output to <b>15+ titles per month</b>. Built and published <b>200+ games</b> across 2D, 3D, RPG, narrative, and idle genres for Google Play, Apple App Store, Huawei AppGallery, and Amazon Appstore.",
@@ -192,6 +292,14 @@ window.PORTFOLIO = {
     {
       title: "Mega Millions Studio — Solo Production at Scale",
       kicker: "unity · c# · 5m+ downloads · store ops",
+      id: "megamillions",
+      images: [
+        { src: "images/megamillions/01-robot-combat.jpg", label: "Robot Combat" },
+        { src: "images/megamillions/02-open-world.jpg", label: "Open World Lifestyle" },
+        { src: "images/megamillions/03-drag-racing.jpg", label: "Drag Racing" },
+        { src: "images/megamillions/04-home-life.jpg", label: "Home Life Simulator" },
+        { src: "images/megamillions/05-rocket-arena.jpg", label: "Rocket Arena" },
+      ],
       lede: {
         engineer:
           "As <b>Solo Game Engineer</b> I single-handedly architected, coded, and released <b>20+ mobile titles</b> on Google Play and the App Store in Unity / C# — with custom asset pipelines, deep APK/IPA size profiling (atlasing, mesh reduction, audio compression), and mobile-ready lighting, shadows, and shaders.",
@@ -230,6 +338,15 @@ window.PORTFOLIO = {
     {
       title: "Bingo IT — Multiplayer Games & Studio Launch",
       kicker: "unity · c# · multiplayer · studio pivot",
+      id: "bingoit",
+      images: [
+        { src: "images/bingoit/00-poker-live.jpg", label: "Poker Live" },
+        { src: "images/bingoit/01-school-fighter.jpg", label: "School Fighter" },
+        { src: "images/bingoit/02-fps-combat.jpg", label: "FPS Combat" },
+        { src: "images/bingoit/03-island-survival.jpg", label: "Island Survival" },
+        { src: "images/bingoit/04-moto-stunt.jpg", label: "Moto Stunt" },
+        { src: "images/bingoit/05-canal-chase.jpg", label: "Canal Chase" },
+      ],
       lede: {
         engineer:
           "As <b>Junior Software Developer</b> I engineered real-time multiplayer sync and table-state logic in <b>Unity / C#</b> with Master Server for a flagship Poker title, shipped <b>low-latency spatial voice</b> with Dissonance, and built responsive UI systems — betting controls, pot indicators, chip animations, and player profiles — across varied device ratios.",
@@ -354,8 +471,8 @@ window.PORTFOLIO = {
   },
   about: {
     engineer: [
-      "I started as a hands-on <b>game developer</b> — mastering Unity, C#, low-level asset profiling, and multiplayer networking — and evolved into a full-stack architect who builds platforms at scale. That dual background is my core strength: I can write low-level C# game logic, build high-throughput Laravel/Node API gateways, and optimize AWS infrastructure without breaking context.",
-      "At <b>Antechip in Dubai</b>, I engineered enterprise iGaming platforms and Web3 systems handling <b>100k+ daily bets</b> and <b>$3M/day transactional volume</b>. Previously, at <b>CodeXLayer</b>, I built custom ad mediation engines and led technical execution across <b>200+ titles</b>, generating <b>50M+ downloads</b>. Core stack: Unity (C#), Laravel/PHP, React, Node.js, PostgreSQL, AWS, Docker, and native Mobile Ad SDKs.",
+      "High-concurrency systems engineer and technical architect with <b>8+ years</b> building enterprise web platforms, high-throughput B2B API infrastructure, and low-latency client applications. I own architecture end-to-end — from Laravel / React / Node services and PostgreSQL data layers to Dockerized CI/CD on AWS and DigitalOcean.",
+      "Proven track record of architecting end-to-end iGaming CRMs processing <b>$3M+</b> in daily transactional volume, engineering custom B2B API distribution gateways, building proprietary slot engines, and deploying non-custodial crypto payment ecosystems alongside <b>220+</b> published games. Core stack spans full-stack web, platform architecture, fintech/Web3 payments, and Unity client systems.",
     ],
     pm: [
       "Over the past <b>8 years</b>, I’ve led product delivery, team scaling, and revenue operations across mobile gaming, iGaming, and Web3. My edge lies in my technical roots: I can lead strategic executive roadmap meetings, structure global B2B partnerships, and step straight into an engineering sprint to unblock low-level architecture bottlenecks.",
@@ -366,7 +483,7 @@ window.PORTFOLIO = {
     lead: "Let's build",
     accent: "something that scales.",
     cta: {
-      engineer: "Open to technical leadership and product / game engineering roles.",
+      engineer: "Open to lead full-stack, systems engineering, and technical architecture roles.",
       pm: "Open to operations, project, programme, and business development leadership roles.",
     },
     email: "muhammadhamza3492@gmail.com",

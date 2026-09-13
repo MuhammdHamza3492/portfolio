@@ -96,8 +96,41 @@
       const i = Number(el.dataset.lede);
       const item = data.featured[i];
       if (!item) return;
+      if (item.bullets?.[voice]?.length) {
+        el.innerHTML = "";
+        el.hidden = true;
+        return;
+      }
+      el.hidden = false;
       const extra = item.more ? ` <span class="more-text">${item.more[voice]}</span>` : "";
       el.innerHTML = item.lede[voice] + extra;
+    });
+
+    $$("[data-points]").forEach((el) => {
+      const i = Number(el.dataset.points);
+      const item = data.featured[i];
+      const pts = item?.bullets?.[voice];
+      if (!pts?.length) {
+        el.innerHTML = "";
+        el.hidden = true;
+        return;
+      }
+      el.hidden = false;
+      el.innerHTML = pts
+        .map(
+          (pt, idx) =>
+            `<li class="${idx === 0 ? "" : "more-text"}">${pt}</li>`
+        )
+        .join("");
+    });
+
+    $$("[data-tech]").forEach((el) => {
+      const i = Number(el.dataset.tech);
+      const item = data.featured[i];
+      if (!item) return;
+      const tags =
+        voice === "pm" && item.techPm?.length ? item.techPm : item.tech || [];
+      el.innerHTML = tags.map((t) => `<span class="tech">${t}</span>`).join("");
     });
 
     $$("[data-sub]").forEach((el) => {
@@ -178,9 +211,25 @@
                 </div>`
             )
             .join("");
-          const tech = (item.tech || [])
-            .map((t) => `<span class="tech">${t}</span>`)
-            .join("");
+          const bulletCount = Math.max(
+            item.bullets?.engineer?.length || 0,
+            item.bullets?.pm?.length || 0
+          );
+          const moreBtn =
+            item.more || bulletCount > 1
+              ? `<button class="more-btn" type="button" data-more="${i}">Read more →</button>`
+              : "";
+          const metricsBlock = metrics
+            ? `<div class="metrics">${metrics}</div>`
+            : "";
+          const imgSlot =
+            item.images && item.images.length
+              ? `<div class="img-stack-slot" data-card="${item.id || i}"></div>`
+              : "";
+          const mediaRow =
+            metrics || imgSlot
+              ? `<div class="metrics-row">${metricsBlock}${imgSlot}</div>`
+              : "";
           const sub = item.subproject
             ? html`
                 <div class="subproj">
@@ -190,9 +239,6 @@
                   </div>
                   <p data-sub="${i}"></p>
                 </div>`
-            : "";
-          const moreBtn = item.more
-            ? `<button class="more-btn" type="button" data-more="${i}">Read more →</button>`
             : "";
           const index =
             document.body.dataset.theme === "editorial"
@@ -206,17 +252,19 @@
                 <span class="tag">${item.kicker}</span>
               </div>
               <p class="lede" data-lede="${i}"></p>
+              <ul class="case-points" data-points="${i}" hidden></ul>
               ${moreBtn}
-              <div class="metrics">${metrics}</div>
+              ${mediaRow}
               <p class="role-line">
                 <span class="role-k">role</span>
                 <span data-role="${i}"></span>
               </p>
               ${sub}
-              <div class="techrow">${tech}</div>
+              <div class="techrow" data-tech="${i}"></div>
             </article>`;
         })
         .join("");
+      buildImageStacks();
     }
   }
 
@@ -399,10 +447,204 @@
     });
   }
 
+  const cardImages = Object.fromEntries(
+    (data.featured || [])
+      .filter((item) => item.id && item.images?.length)
+      .map((item) => [item.id, item.images])
+  );
+
+  let lbCard = null;
+  let lbCur = 0;
+  let lbZoom = 1;
+
+  function privacyMaskHtml(masks) {
+    if (!masks?.length) return "";
+    return masks
+      .map(
+        (m) =>
+          `<span class="shot-blur" style="left:${m.left};top:${m.top};width:${m.width};height:${m.height}"></span>`
+      )
+      .join("");
+  }
+
+  function buildImageStacks() {
+    $$(".img-stack-slot").forEach((slot) => {
+      const cid = slot.getAttribute("data-card");
+      const imgs = cardImages[cid];
+      if (!imgs?.length) {
+        slot.remove();
+        return;
+      }
+      const stack = document.createElement("div");
+      stack.className = "img-stack";
+      stack.setAttribute("data-card", cid);
+      stack.setAttribute("role", "button");
+      stack.setAttribute("tabindex", "0");
+      stack.setAttribute("aria-label", `View ${imgs.length} screenshots`);
+      const show = imgs.slice(0, 3).reverse();
+      show.forEach((img) => {
+        const si = document.createElement("div");
+        si.className = "si";
+        const masks = privacyMaskHtml(img.privacyMasks);
+        si.innerHTML = masks
+          ? `<div class="shot-wrap"><img src="${img.src}" alt="${img.label || ""}" loading="lazy" /><div class="shot-masks">${masks}</div></div>`
+          : `<img src="${img.src}" alt="${img.label || ""}" loading="lazy" />`;
+        stack.appendChild(si);
+      });
+      const ct = document.createElement("div");
+      ct.className = "img-stack-ct";
+      ct.textContent = `${imgs.length} photo${imgs.length === 1 ? "" : "s"} ↗`;
+      stack.appendChild(ct);
+      const open = () => lbOpen(cid, 0);
+      stack.addEventListener("click", open);
+      stack.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          open();
+        }
+      });
+      slot.replaceWith(stack);
+    });
+  }
+
+  function lbEls() {
+    return {
+      overlay: $("#lb-overlay"),
+      shot: $("#lb-shot"),
+      img: $("#lb-img"),
+      masks: $("#lb-masks"),
+      title: $("#lb-title"),
+      count: $("#lb-count"),
+      dots: $("#lb-dots"),
+      level: $("#lb-zoom-level"),
+    };
+  }
+
+  function lbResetZoom() {
+    lbZoom = 1;
+    const { shot, level } = lbEls();
+    if (shot) {
+      shot.style.transform = "scale(1)";
+      shot.style.cursor = "zoom-in";
+    }
+    if (level) level.textContent = "100%";
+  }
+
+  function lbApplyZoom() {
+    const { shot, level } = lbEls();
+    if (!shot) return;
+    shot.style.transform = `scale(${lbZoom})`;
+    shot.style.cursor = lbZoom > 1 ? "zoom-out" : "zoom-in";
+    if (level) level.textContent = `${Math.round(lbZoom * 100)}%`;
+  }
+
+  function lbRender() {
+    const imgs = cardImages[lbCard] || [];
+    if (!imgs.length) return;
+    const d = imgs[lbCur];
+    const { img, masks, title, count, dots } = lbEls();
+    if (img) {
+      img.src = d.src;
+      img.alt = d.label || "";
+    }
+    if (masks) masks.innerHTML = privacyMaskHtml(d.privacyMasks);
+    if (title) title.textContent = d.label || "Screenshot";
+    if (count) count.textContent = `${lbCur + 1} / ${imgs.length}`;
+    if (dots) {
+      dots.innerHTML = imgs
+        .map(
+          (_, i) =>
+            `<button type="button" class="lb-dot${i === lbCur ? " on" : ""}" data-lb-dot="${i}" aria-label="Image ${i + 1}"></button>`
+        )
+        .join("");
+    }
+    lbResetZoom();
+  }
+
+  function lbOpen(cid, idx) {
+    if (!cardImages[cid]?.length) return;
+    lbCard = cid;
+    lbCur = idx || 0;
+    const { overlay } = lbEls();
+    if (!overlay) return;
+    overlay.hidden = false;
+    overlay.classList.add("open");
+    lbRender();
+  }
+
+  function lbClose() {
+    const { overlay } = lbEls();
+    if (!overlay) return;
+    overlay.classList.remove("open");
+    overlay.hidden = true;
+    lbResetZoom();
+  }
+
+  function lbNext() {
+    const imgs = cardImages[lbCard] || [];
+    if (!imgs.length) return;
+    lbCur = (lbCur + 1) % imgs.length;
+    lbRender();
+  }
+
+  function lbPrev() {
+    const imgs = cardImages[lbCard] || [];
+    if (!imgs.length) return;
+    lbCur = (lbCur - 1 + imgs.length) % imgs.length;
+    lbRender();
+  }
+
+  function setupLightbox() {
+    const { overlay } = lbEls();
+    if (!overlay) return;
+    $("#lb-close")?.addEventListener("click", lbClose);
+    $("#lb-next")?.addEventListener("click", lbNext);
+    $("#lb-prev")?.addEventListener("click", lbPrev);
+    $("#lb-zoom-in")?.addEventListener("click", () => {
+      lbZoom = Math.min(3, lbZoom + 0.25);
+      lbApplyZoom();
+    });
+    $("#lb-zoom-out")?.addEventListener("click", () => {
+      lbZoom = Math.max(1, lbZoom - 0.25);
+      lbApplyZoom();
+    });
+    $("#lb-zoom-level")?.addEventListener("click", lbResetZoom);
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) lbClose();
+    });
+    overlay.addEventListener("click", (e) => {
+      const dot = e.target.closest("[data-lb-dot]");
+      if (!dot) return;
+      lbCur = Number(dot.dataset.lbDot);
+      lbRender();
+    });
+    $("#lb-img-area")?.addEventListener("click", (e) => {
+      if (e.target.closest(".lb-zoom-bar")) return;
+      lbZoom = lbZoom > 1 ? 1 : 2;
+      lbApplyZoom();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (!overlay.classList.contains("open")) return;
+      if (e.key === "Escape") lbClose();
+      if (e.key === "ArrowRight") lbNext();
+      if (e.key === "ArrowLeft") lbPrev();
+      if (e.key === "+" || e.key === "=") {
+        lbZoom = Math.min(3, lbZoom + 0.25);
+        lbApplyZoom();
+      }
+      if (e.key === "-") {
+        lbZoom = Math.max(1, lbZoom - 0.25);
+        lbApplyZoom();
+      }
+      if (e.key === "0") lbResetZoom();
+    });
+  }
+
   renderStatic();
   setVoice(voice, { replace: true });
   setupVoice();
   setupMore();
+  setupLightbox();
   setupIntro();
   setupHeader();
   setupProgress();
