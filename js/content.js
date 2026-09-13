@@ -275,10 +275,10 @@ window.PORTFOLIO = {
           "Built automated deployment pipelines, signing configurations, and multi-account build processes across Google Play, Apple App Store, Huawei AppGallery, and Amazon Appstore.",
       },
       {
-        title: "BSc Computer Science",
-        kicker: "university of lahore · 2013–2017",
+        title: "Full-Stack & Game Architecture",
+        kicker: "unity · laravel · react · web3",
         blurb:
-          "Foundational degree in Computer Science—providing the core software engineering, data structures, and architectural principles driving full-stack and game engine design.",
+          "Designed modular game architectures, RESTful API gateways, dynamic database models, and Web3 crypto integrations across 220+ titles and enterprise platforms.",
       },
     ],
     pm: [
@@ -313,10 +313,10 @@ window.PORTFOLIO = {
           "Established B2B agency operations from scratch, pitching international enterprise clients, negotiating contracts, and securing $15,000+ contracts within the first month.",
       },
       {
-        title: "BSc Computer Science",
-        kicker: "university of lahore · 2013–2017",
+        title: "Cross-Functional Leadership",
+        kicker: "team scaling · 30+ ftes · agile",
         blurb:
-          "Technical foundation in Computer Science—enabling effective technical leadership, precise engineering estimation, and seamless bridging of technical and business teams.",
+          "Led cross-functional teams of up to 30+ engineers, designers, and marketers across 5 concurrent global projects—driving sprint velocity, milestone delivery, and client alignment.",
       },
     ],
   },
