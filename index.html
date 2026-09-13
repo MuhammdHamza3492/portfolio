@@ -3,60 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hamza — Choose a portfolio template</title>
-    <link rel="stylesheet" href="css/chooser.css" />
+    <title>Muhammad Hamza — Operations Manager</title>
+    <meta
+      name="description"
+      content="Muhammad Hamza — Operations / Project / Business Development Manager based in Dubai."
+    />
+    <link rel="stylesheet" href="css/site.css" />
   </head>
   <body>
-    <div class="wrap">
-      <div class="kicker"><i></i> Template picker</div>
-      <h1>Choose a <em>direction</em></h1>
-      <p class="lede">
-        Four layouts modeled on the
-        <b>information architecture</b> of
-        <a href="https://ahmadijaz.github.io/Portfolio/">Ahmad Ijaz’s portfolio</a>:
-        hero, voice toggle, skills, metrics, long case studies, earlier work, about, and contact.
-        Copy is placeholder — we will swap in your content next.
-      </p>
+    <div id="progress" data-progress></div>
+    <div id="spotlight" data-spotlight></div>
 
-      <div class="grid">
-        <a class="card" href="templates/editorial.html">
-          <div class="preview p-editorial"><span>I build the<br /><b>systems</b></span></div>
-          <div class="meta">
-            <h2>01 — Editorial</h2>
-            <p>Matches the reference layout: dark canvas, mint accent, uppercase headline, glass case cards, photo, Engineer / PM toggle.</p>
-            <span class="go">Open template →</span>
+    <header>
+      <div class="wrap bar">
+        <div class="brand">
+          <button class="mark" type="button" data-open-intro title="View photo">
+            <img src="images/hamza.jpg" alt="Muhammad Hamza" />
+          </button>
+          <div class="who">
+            <b data-bind="name">Muhammad Hamza</b>
+            <span data-bind="title">Operations Manager</span>
           </div>
-        </a>
-
-        <a class="card" href="templates/atelier.html">
-          <div class="preview p-atelier"><i></i><span>I build the systems</span></div>
-          <div class="meta">
-            <h2>02 — Atelier</h2>
-            <p>Light magazine. Cream paper, rust italic serif, ruled columns, newsprint metrics. Best if you want a quieter, print-like feel.</p>
-            <span class="go">Open template →</span>
+        </div>
+        <div class="actions">
+          <div class="toggle" role="tablist">
+            <button type="button" data-voice-btn="engineer">Engineer</button>
+            <button type="button" class="on" data-voice-btn="pm">PM</button>
           </div>
-        </a>
-
-        <a class="card" href="templates/signal.html">
-          <div class="preview p-signal"><span>sys / ready</span></div>
-          <div class="meta">
-            <h2>03 — Signal</h2>
-            <p>Terminal-adjacent engineer look. Sticky left nav, lime on near-black, mono labels, compact case cards.</p>
-            <span class="go">Open template →</span>
-          </div>
-        </a>
-
-        <a class="card" href="templates/rail.html">
-          <div class="preview p-rail"><span>Hamza</span></div>
-          <div class="meta">
-            <h2>04 — Rail</h2>
-            <p>Studio split. Dark identity rail on the left, warm paper content on the right, soft cards and serif headlines.</p>
-            <span class="go">Open template →</span>
-          </div>
-        </a>
+        </div>
       </div>
+    </header>
 
-      <p class="note">All four read from js/content.js — change the content once, every template updates.</p>
+    <main class="wrap">
+      <section class="hero">
+        <div class="kicker reveal"><span class="dot"></span><span data-bind="status">available</span></div>
+        <h1>
+          I <span data-bind="verb">build</span> the<br />
+          <span class="g wr" data-bind="words"></span><br />
+          that scale.
+        </h1>
+        <p class="sub reveal" data-bind="sub"></p>
+        <div class="heroGrid">
+          <div>
+            <p class="intro reveal" data-bind="intro"></p>
+            <div class="stack reveal" data-bind="skills"></div>
+          </div>
+          <aside class="cardStat reveal" data-bind="stats"></aside>
+        </div>
+      </section>
+
+      <section>
+        <div class="eyebrow reveal">Selected work</div>
+        <div data-bind="work"></div>
+      </section>
+
+      <section>
+        <div class="eyebrow reveal">Earlier work</div>
+        <div class="earlier" data-bind="earlier"></div>
+      </section>
+
+      <section class="about">
+        <div class="eyebrow reveal">About</div>
+        <div data-bind="about"></div>
+      </section>
+
+      <section class="contact">
+        <div class="eyebrow reveal">Get in touch</div>
+        <h2 class="reveal">Let's build<br />something <span class="g">that scales.</span></h2>
+        <p class="reveal" data-bind="cta"></p>
+        <div class="contact-row reveal">
+          <a class="cbtn" data-bind="email"></a>
+          <a class="cbtn" data-bind="linkedin">LinkedIn <span class="ar">→</span></a>
+          <a class="cbtn" data-phone></a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <span><span data-bind="name"></span> © <span data-bind="year"></span></span>
+        <span data-bind="title"></span>
+      </div>
+    </footer>
+
+    <div class="overlay" data-intro>
+      <div class="modal">
+        <button class="modal-close" type="button" data-close-intro>✕</button>
+        <img src="images/hamza.jpg" alt="Muhammad Hamza" />
+      </div>
     </div>
+
+    <script src="js/content.js"></script>
+    <script src="js/common.js"></script>
   </body>
 </html>
