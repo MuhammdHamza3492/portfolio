@@ -2,7 +2,10 @@
   const data = window.PORTFOLIO;
   if (!data) return;
 
-  let voice = "pm";
+  const VOICE_SLUG = { engineer: "SE", pm: "PM" };
+  const SLUG_VOICE = { SE: "engineer", PM: "pm", se: "engineer", pm: "pm" };
+
+  let voice = voiceFromLocation();
   let wordTimer;
 
   const $ = (sel, root = document) => root.querySelector(sel);
@@ -12,11 +15,49 @@
     return strings.reduce((out, str, i) => out + str + (values[i] ?? ""), "");
   }
 
-  function setVoice(next) {
+  function pathSegments() {
+    return location.pathname.split("/").filter(Boolean);
+  }
+
+  function getBasePath() {
+    const parts = pathSegments();
+    if (parts.length && SLUG_VOICE[parts[parts.length - 1]]) parts.pop();
+    if (parts.length && parts[parts.length - 1].toLowerCase() === "index.html") parts.pop();
+    return parts.length ? `/${parts.join("/")}/` : "/";
+  }
+
+  function voiceFromLocation() {
+    if (window.__INITIAL_VOICE === "engineer" || window.__INITIAL_VOICE === "pm") {
+      return window.__INITIAL_VOICE;
+    }
+    const parts = pathSegments();
+    const last = parts[parts.length - 1];
+    if (last && SLUG_VOICE[last]) return SLUG_VOICE[last];
+    return "pm";
+  }
+
+  function voiceUrl(next) {
+    return `${getBasePath()}${VOICE_SLUG[next]}`;
+  }
+
+  function syncUrl(next, replace) {
+    const url = voiceUrl(next) + location.search + location.hash;
+    const state = { voice: next };
+    if (replace) history.replaceState(state, "", url);
+    else if (location.pathname.replace(/\/+$/, "") !== voiceUrl(next).replace(/\/+$/, "")) {
+      history.pushState(state, "", url);
+    } else {
+      history.replaceState(state, "", url);
+    }
+  }
+
+  function setVoice(next, opts = {}) {
+    if (next !== "engineer" && next !== "pm") return;
     voice = next;
     $$("[data-voice-btn]").forEach((btn) => {
       btn.classList.toggle("on", btn.dataset.voiceBtn === voice);
     });
+    if (opts.updateUrl !== false) syncUrl(voice, !!opts.replace);
     renderVoice();
   }
 
@@ -258,6 +299,10 @@
     $$("[data-voice-btn]").forEach((btn) => {
       btn.addEventListener("click", () => setVoice(btn.dataset.voiceBtn));
     });
+    window.addEventListener("popstate", (event) => {
+      const next = event.state?.voice || voiceFromLocation();
+      setVoice(next, { updateUrl: false });
+    });
   }
 
   function setupReveal() {
@@ -335,7 +380,7 @@
   }
 
   renderStatic();
-  renderVoice();
+  setVoice(voice, { replace: true });
   setupVoice();
   setupMore();
   setupIntro();
