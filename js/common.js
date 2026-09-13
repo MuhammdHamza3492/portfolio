@@ -73,7 +73,10 @@
     if (verb) verb.textContent = voice === "pm" ? "ship" : "build";
 
     const sub = $("[data-bind=sub]");
-    if (sub) sub.innerHTML = data.sub[voice] || data.sub;
+    if (sub) {
+      const text = typeof data.sub === "string" ? data.sub : data.sub?.[voice];
+      if (typeof text === "string") sub.innerHTML = text;
+    }
 
     renderSkills();
     renderWords();
@@ -112,7 +115,10 @@
     });
 
     const sub = $("[data-bind=sub]");
-    if (sub) sub.innerHTML = data.sub[voice] || data.sub;
+    if (sub) {
+      const text = typeof data.sub === "string" ? data.sub : data.sub?.[voice];
+      if (typeof text === "string") sub.innerHTML = text;
+    }
 
     renderSkills();
 
