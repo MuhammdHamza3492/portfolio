@@ -238,6 +238,8 @@
           </article>`
       )
       .join("");
+    // Re-bind reveal so voice switches don't leave cards at opacity 0
+    observeReveal($$(".reveal", earlier));
   }
 
   function renderSkills() {
@@ -309,24 +311,38 @@
     });
   }
 
-  function setupReveal() {
-    const nodes = $$(".reveal");
+  let revealObserver;
+
+  function observeReveal(nodes) {
+    if (!nodes.length) return;
     if (!("IntersectionObserver" in window)) {
       nodes.forEach((el) => el.classList.add("in"));
       return;
     }
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-    nodes.forEach((el) => io.observe(el));
+    if (!revealObserver) {
+      revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+    }
+    nodes.forEach((el) => {
+      // If already on-screen (e.g. SE/PM toggle), show immediately
+      const rect = el.getBoundingClientRect();
+      const visible = rect.top < window.innerHeight && rect.bottom > 0;
+      if (visible) el.classList.add("in");
+      else revealObserver.observe(el);
+    });
+  }
+
+  function setupReveal() {
+    observeReveal($$(".reveal"));
   }
 
   function setupIntro() {
