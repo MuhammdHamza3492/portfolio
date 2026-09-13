@@ -158,8 +158,8 @@ window.PORTFOLIO = {
       },
       more: {
         engineer:
-          "Built custom Unity native plugins for ad SDKs (rewarded, interstitial, banner) without hurting frame rates, and solved low-level runtime issues independently through docs, communities, and reverse-engineering.",
-        pm: "Used store trends and retention data to iterate mechanics, themes, and ad flow for ARPDAU. Ran end-to-end store ops — submissions, policy compliance, and localized listings — while owning scope, prioritization, and level design solo.",
+          "Built custom Unity native plugins for ad SDKs — <b>AdMob, Unity Ads, Facebook Audience Network, and Chartboost</b> (rewarded, interstitial, banner) — without hurting frame rates, and solved low-level runtime issues independently through docs, communities, and reverse-engineering.",
+        pm: "Used store trends and retention data to iterate mechanics, themes, and ad flow for ARPDAU across <b>AdMob, Unity Ads, Facebook Audience Network, and Chartboost</b>. Ran end-to-end store ops — submissions, policy compliance, and localized listings — while owning scope, prioritization, and level design solo.",
       },
       metrics: [
         { value: "20+", label: "titles released solo" },
@@ -175,7 +175,10 @@ window.PORTFOLIO = {
         "C#",
         "Texture Atlasing",
         "Lighting & Shading",
-        "Mobile Ad SDKs",
+        "AdMob",
+        "Unity Ads",
+        "Facebook Audience Network",
+        "Chartboost",
         "APK / IPA Profiling",
         "ASO",
         "Product Ownership",
