@@ -149,23 +149,39 @@ window.PORTFOLIO = {
       tech: ["Jira", "Trello", "Unity", "C#", "GitHub", "Google Play", "App Store", "Huawei"],
     },
     {
-      title: "Mega Millions Studio — games that monetize",
-      kicker: "unity · c# · 1m+ downloads",
+      title: "Mega Millions Studio — Solo Production at Scale",
+      kicker: "unity · c# · 5m+ downloads · store ops",
       lede: {
         engineer:
-          "Led architecture and development of <b>5+ mobile games</b> with a focus on scalable Unity architecture, cross-platform deployment, and monetization. Shipped to a combined <b>1M+ downloads</b> and lifted ARPU <b>20%</b> through IAP and ads.",
-        pm: "Ran end-to-end game development cycles — architecture, content pipeline, QA, and store release — while mentoring juniors and pairing with art and design so the pipeline stayed on time.",
+          "As <b>Solo Game Engineer</b> I single-handedly architected, coded, and released <b>20+ mobile titles</b> on Google Play and the App Store in Unity / C# — with custom asset pipelines, deep APK/IPA size profiling (atlasing, mesh reduction, audio compression), and mobile-ready lighting, shadows, and shaders.",
+        pm: "As <b>Product Lead & Solo Producer</b> I owned the full product lifecycle across <b>20+ games</b> that reached <b>5M+ lifetime organic downloads</b> — combining UX, ASO, and ad monetization, with strict self-imposed delivery deadlines and store compliance on Google Play and Apple.",
+      },
+      more: {
+        engineer:
+          "Built custom Unity native plugins for ad SDKs (rewarded, interstitial, banner) without hurting frame rates, and solved low-level runtime issues independently through docs, communities, and reverse-engineering.",
+        pm: "Used store trends and retention data to iterate mechanics, themes, and ad flow for ARPDAU. Ran end-to-end store ops — submissions, policy compliance, and localized listings — while owning scope, prioritization, and level design solo.",
       },
       metrics: [
-        { value: "5+", label: "games shipped" },
-        { value: "1M+", label: "cumulative downloads" },
-        { value: "+20%", label: "ARPU increase" },
+        { value: "20+", label: "titles released solo" },
+        { value: "5M+", label: "lifetime organic downloads" },
+        { value: "2", label: "stores — Play & App Store" },
       ],
       role: {
-        engineer: "Senior Game Developer — architecture, build, and monetization",
-        pm: "Senior Game Developer — cycle ownership, mentoring, and pipeline",
+        engineer: "Solo Game Engineer — architecture, optimization, ads & shipping",
+        pm: "Product Lead & Solo Producer — lifecycle, ASO, revenue & store ops",
       },
-      tech: ["Unity", "C#", "Xcode", "Android Studio", "Play Console", "App Store", "Ads / IAP"],
+      tech: [
+        "Unity",
+        "C#",
+        "Texture Atlasing",
+        "Lighting & Shading",
+        "Mobile Ad SDKs",
+        "APK / IPA Profiling",
+        "ASO",
+        "Product Ownership",
+        "Play Console",
+        "App Store",
+      ],
     },
     {
       title: "Bingo IT — Multiplayer Games & Studio Launch",
