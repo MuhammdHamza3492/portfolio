@@ -120,6 +120,7 @@
     }
 
     renderSkills();
+    renderEarlier();
     renderWords();
   }
 
@@ -162,6 +163,7 @@
     }
 
     renderSkills();
+    renderEarlier();
 
     const work = $("[data-bind=work]");
     if (work) {
@@ -216,24 +218,26 @@
         })
         .join("");
     }
+  }
 
+  function renderEarlier() {
     const earlier = $("[data-bind=earlier]");
-    if (earlier) {
-      earlier.innerHTML = data.earlier
-        .map(
-          (item) => html`
-            <article class="ew reveal">
-              <div class="ew-top">
-                <h4><span class="ew-mark">›</span> ${item.title}</h4>
-                <span class="etag">${item.kicker}</span>
-              </div>
-              <p>${item.blurb}</p>
-            </article>`
-        )
-        .join("");
-    }
-
-    renderWords();
+    if (!earlier) return;
+    const list = Array.isArray(data.earlier)
+      ? data.earlier
+      : data.earlier?.[voice] || data.earlier?.engineer || [];
+    earlier.innerHTML = list
+      .map(
+        (item) => html`
+          <article class="ew reveal">
+            <div class="ew-top">
+              <h4><span class="ew-mark">›</span> ${item.title}</h4>
+              <span class="etag">${item.kicker}</span>
+            </div>
+            <p>${item.blurb}</p>
+          </article>`
+      )
+      .join("");
   }
 
   function renderSkills() {

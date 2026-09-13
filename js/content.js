@@ -242,44 +242,84 @@ window.PORTFOLIO = {
       ],
     },
   ],
-  earlier: [
-    {
-      title: "Provider integrations",
-      kicker: "igaming · ggr · compliance",
-      blurb:
-        "Negotiated and onboarded slot and live-casino providers — Pragmatic Play, Evolution, Sexy Gaming, Vivo, Habanero, CQ9 — on rates, compliance, and product policy.",
-    },
-    {
-      title: "CRM & payment operations",
-      kicker: "workflows · kpi · live ops",
-      blurb:
-        "Owned CRM and payment workflows for a live iGaming platform, keeping cash, KYC, and player ops aligned with daily KPIs.",
-    },
-    {
-      title: "SOP library",
-      kicker: "process · scale",
-      blurb:
-        "Wrote and rolled out 10+ SOPs so operations, finance, and delivery could run consistently as the team and provider list grew.",
-    },
-    {
-      title: "Talent & retention",
-      kicker: "hiring · <10% attrition",
-      blurb:
-        "Hired, grew, and retained a cross-functional team — tech, HR, finance, product — and held attrition under 10%.",
-    },
-    {
-      title: "Store publishing & ASO",
-      kicker: "play · app store · huawei · amazon",
-      blurb:
-        "Shipped and optimized titles across Google Play, App Store, Huawei AppGallery, and Amazon, using Sensor Tower, App Annie, and Google Trends.",
-    },
-    {
-      title: "BSc Computer Science",
-      kicker: "university of lahore · 2013–2017",
-      blurb:
-        "Computer Science degree from the University of Lahore — the technical base under the operations and delivery work that followed.",
-    },
-  ],
+  earlier: {
+    engineer: [
+      {
+        title: "Provider & B2B API Aggregation",
+        kicker: "igaming · rest apis · webhooks",
+        blurb:
+          "Engineered unified API integration gateways connecting 10+ major providers (Pragmatic, Evolution, SoftSwiss, Habanero, CQ9)—handling real-time bet validation and dynamic callback webhooks.",
+      },
+      {
+        title: "Monetization & Ad Mediation",
+        kicker: "admob · ironsource · applovin",
+        blurb:
+          "Built custom native Unity ad plugins and unified mediation wrappers combining AdMob, Unity Ads, Facebook Audience Network, AppLovin, and Chartboost for maximum eCPM.",
+      },
+      {
+        title: "Payment Gateways & Web3 Architecture",
+        kicker: "crypto · dynamic wallets · backend",
+        blurb:
+          "Architected non-custodial crypto payment pipelines using NowPayments/CoinPayments alongside ERC-20 token rewards, OpenSea NFT metadata, and automated payout systems.",
+      },
+      {
+        title: "Engine & Game Optimization",
+        kicker: "unity · c# · asset profiling",
+        blurb:
+          "Optimized build sizes, memory footprints, and frame rates via reverse-engineering techniques, texture atlasing, mesh reduction, and low-latency multiplayer state synchronization.",
+      },
+      {
+        title: "Multi-Platform Publishing Infrastructure",
+        kicker: "play · app store · huawei · amazon",
+        blurb:
+          "Built automated deployment pipelines, signing configurations, and multi-account build processes across Google Play, Apple App Store, Huawei AppGallery, and Amazon Appstore.",
+      },
+      {
+        title: "BSc Computer Science",
+        kicker: "university of lahore · 2013–2017",
+        blurb:
+          "Foundational degree in Computer Science—providing the core software engineering, data structures, and architectural principles driving full-stack and game engine design.",
+      },
+    ],
+    pm: [
+      {
+        title: "Provider & B2B Vendor Ops",
+        kicker: "igaming · ggr · onboarding",
+        blurb:
+          "Negotiated rates, compliance terms, and contract onboarding with global casino and live-dealer providers—building a unified white-label B2B API distribution business.",
+      },
+      {
+        title: "Platform Operations & High-Volume Scale",
+        kicker: "crm · $3m/day · live ops",
+        blurb:
+          "Owned CRM, player retention workflows, and payment operations for platforms processing over 100,000 daily bets and $1M–$3M in daily transaction volume.",
+      },
+      {
+        title: "Studio Growth & Program Leadership",
+        kicker: "scaling · 3 to 60+ ftes · agile",
+        blurb:
+          "Scaled game engineering organizations from 3 to 60+ cross-functional team members across 5 departments, implementing Agile sprint cadences and freelance delivery pipelines.",
+      },
+      {
+        title: "Multi-Store Lifecycle & Market Growth",
+        kicker: "50m+ downloads · 200+ games",
+        blurb:
+          "Directed end-to-end product lifecycles for over 200 games across Google Play, App Store, Huawei, and Amazon—generating 50M+ organic downloads and $1M+ in revenue.",
+      },
+      {
+        title: "Client Acquisition & Business Growth",
+        kicker: "b2b sales · upwork · fiverr",
+        blurb:
+          "Established B2B agency operations from scratch, pitching international enterprise clients, negotiating contracts, and securing $15,000+ contracts within the first month.",
+      },
+      {
+        title: "BSc Computer Science",
+        kicker: "university of lahore · 2013–2017",
+        blurb:
+          "Technical foundation in Computer Science—enabling effective technical leadership, precise engineering estimation, and seamless bridging of technical and business teams.",
+      },
+    ],
+  },
   about: {
     engineer: [
       "I started as a <b>game developer</b> — Unity, C#, multiplayer, store consoles — and grew into the person who also owns the operation around the product. That mix is the point: I can sit in a sprint with engineers, then walk into a provider or budget meeting without a translator.",
