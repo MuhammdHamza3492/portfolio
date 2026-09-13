@@ -168,7 +168,7 @@ window.PORTFOLIO = {
       tech: ["Unity", "C#", "Xcode", "Android Studio", "Play Console", "App Store", "Ads / IAP"],
     },
     {
-      title: "Bingo IT — multiplayer games & studio launch",
+      title: "Bingo IT — Multiplayer Games & Studio Launch",
       kicker: "unity · c# · multiplayer · studio pivot",
       lede: {
         engineer:
