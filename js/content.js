@@ -168,22 +168,38 @@ window.PORTFOLIO = {
       tech: ["Unity", "C#", "Xcode", "Android Studio", "Play Console", "App Store", "Ads / IAP"],
     },
     {
-      title: "Bingo IT — standing up a game division",
-      kicker: "unity · multiplayer · new revenue line",
+      title: "Bingo IT — multiplayer games & studio launch",
+      kicker: "unity · c# · multiplayer · studio pivot",
       lede: {
         engineer:
-          "Built multiplayer features in <b>Unity 3D</b>, including Dissonance Voice Chat on the Master Server Kit. Acted as the primary in-office developer, pairing with a remote Australian counterpart, and led client-facing technical discussions.",
-        pm: "Laid the foundation for the company's move into games. I made the strategic case to leadership for a dedicated Game Development division — it was approved, and it opened a new revenue stream.",
+          "As <b>Junior Software Developer</b> I engineered real-time multiplayer sync and table-state logic in <b>Unity / C#</b> with Master Server for a flagship Poker title, shipped <b>low-latency spatial voice</b> with Dissonance, and built responsive UI systems — betting controls, pot indicators, chip animations, and player profiles — across varied device ratios.",
+        pm: "As <b>Game Development Lead & PM</b> I initiated Bingo IT’s in-house studio pivot: built a playable game MVP on personal time, pitched the monetization model (<b>AdMob + IAP</b>) to the CEO, and won approval to form the company’s first internal game unit — then led delivery for <b>20+ titles</b>.",
+      },
+      more: {
+        engineer:
+          "Built, tested, and shipped <b>20+ mini-games</b> from concept to release with strong level design, state management, and performance work. Prepared interactive prototype demos and technical presentations for external enterprise clients.",
+        pm: "Formed and led a cross-functional team of <b>5</b> (dev, art, QA) with Agile sprints, Trello/Slack workflows, and design reviews. Owned full lifecycle — milestones, QA pipelines, builds, and launch — and served as technical liaison for the long-term Poker client with live demos and deliverable timelines.",
       },
       metrics: [
-        { value: "1 → n", label: "game division founded" },
-        { value: "AU + PK", label: "remote delivery pair" },
+        { value: "20+", label: "titles / mini-games shipped" },
+        { value: "5", label: "cross-functional team led" },
+        { value: "1st", label: "in-house game unit founded" },
       ],
       role: {
-        engineer: "Game Developer — multiplayer, voice, and client-facing build",
-        pm: "Game Developer — built the case for a new department and delivered it",
+        engineer: "Junior Software Developer — multiplayer, voice, UI & client demos",
+        pm: "Game Development Lead & PM — studio pivot, team, and end-to-end delivery",
       },
-      tech: ["Unity", "C#", "Dissonance", "Master Server Kit", "GitHub", "Trello"],
+      tech: [
+        "Unity",
+        "C#",
+        "JavaScript",
+        "Dissonance Voice Chat",
+        "Master Server",
+        "Git / GitHub",
+        "Trello",
+        "Slack",
+        "Agile / Scrum",
+      ],
     },
   ],
   earlier: [
