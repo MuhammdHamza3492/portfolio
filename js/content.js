@@ -7,7 +7,7 @@ window.PORTFOLIO = {
   year: "2026",
   location: "Dubai, UAE",
   phone: "+971528059211",
-  photo: "images/hamza.jpg",
+  photo: "images/hamza.png",
   headlineLead: "I build the",
   headlineWords: ["systems", "platforms", "products", "games"],
   headlineWordsPm: ["operations", "projects", "products", "teams"],
