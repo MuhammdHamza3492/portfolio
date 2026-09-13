@@ -69,9 +69,9 @@ window.PORTFOLIO = {
   stats: {
     engineer: [
       { value: "8+", label: "years experience" },
-      { value: "1M+", label: "game downloads" },
-      { value: "5+", label: "mobile games shipped" },
-      { value: "+20%", label: "ARPU increase" },
+      { value: "5M+", label: "game downloads" },
+      { value: "20+", label: "mobile titles shipped" },
+      { value: "2", label: "stores — Play & App Store" },
     ],
     pm: [
       { value: "15", label: "team members led" },
@@ -259,7 +259,7 @@ window.PORTFOLIO = {
   about: {
     engineer: [
       "I started as a <b>game developer</b> — Unity, C#, multiplayer, store consoles — and grew into the person who also owns the operation around the product. That mix is the point: I can sit in a sprint with engineers, then walk into a provider or budget meeting without a translator.",
-      "At <b>AnteChip in Dubai</b> I ran live iGaming operations. Before that I delivered 10+ concurrent software projects at CodeXLayer and shipped games with 1M+ downloads. Tools I actually use: Unity, Laravel/PHP, React, Jira, Monday.com, AWS, and the store consoles.",
+      "At <b>AnteChip in Dubai</b> I ran live iGaming operations. Before that I delivered 10+ concurrent software projects at CodeXLayer and shipped games with <b>5M+</b> downloads. Tools I actually use: Unity, Laravel/PHP, React, Jira, Monday.com, AWS, and the store consoles.",
     ],
     pm: [
       "I've spent <b>8 years</b> at the intersection of operations, project delivery, and business development. I plan the work, run the team, keep the stakeholder conversation honest, and still understand the build well enough to unblock it.",
