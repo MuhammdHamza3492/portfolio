@@ -245,40 +245,52 @@ window.PORTFOLIO = {
   earlier: {
     engineer: [
       {
-        title: "Provider & B2B API Aggregation",
-        kicker: "igaming · rest apis · webhooks",
+        title: "High-Throughput iGaming Systems",
+        kicker: "laravel · react · postgres · $3m/day",
         blurb:
-          "Engineered unified API integration gateways connecting 10+ major providers (Pragmatic, Evolution, SoftSwiss, Habanero, CQ9)—handling real-time bet validation and dynamic callback webhooks.",
+          "Built dynamic player, admin, and affiliate portals using Laravel, React, Node.js, and PostgreSQL—handling 10,000+ daily active users, 100k+ daily bets, and $1M–$3M daily volume.",
       },
       {
-        title: "Monetization & Ad Mediation",
-        kicker: "admob · ironsource · applovin",
+        title: "B2B API Aggregator Gateway",
+        kicker: "igaming · rest apis · webhooks · microservices",
         blurb:
-          "Built custom native Unity ad plugins and unified mediation wrappers combining AdMob, Unity Ads, Facebook Audience Network, AppLovin, and Chartboost for maximum eCPM.",
+          "Engineered a scalable API aggregation engine unifying 10+ major providers (Pragmatic, Evolution, SoftSwiss, Habanero, CQ9)—handling dynamic bet validation, webhooks, and seamless wallet sync.",
       },
       {
-        title: "Payment Gateways & Web3 Architecture",
-        kicker: "crypto · dynamic wallets · backend",
+        title: "Proprietary Slot Engine & Game Math",
+        kicker: "game engine · slot math · asset loading",
         blurb:
-          "Architected non-custodial crypto payment pipelines using NowPayments/CoinPayments alongside ERC-20 token rewards, OpenSea NFT metadata, and automated payout systems.",
+          "Architected an in-house Slot Game Engine—building dynamic reel math modules, state evaluation algorithms, dynamic RNG connectors, and remote asset loading pipelines.",
       },
       {
-        title: "Engine & Game Optimization",
-        kicker: "unity · c# · asset profiling",
+        title: "Crypto Payments & Web3 Integration",
+        kicker: "nowpayments · coinpayments · erc-20 · nfts",
         blurb:
-          "Optimized build sizes, memory footprints, and frame rates via reverse-engineering techniques, texture atlasing, mesh reduction, and low-latency multiplayer state synchronization.",
+          "Implemented non-custodial crypto payment gateways with dynamic wallet creation and automated withdrawal webhooks, alongside ERC-20 token rewards and OpenSea NFT integration for GoGo Racing.",
       },
       {
-        title: "Multi-Platform Publishing Infrastructure",
-        kicker: "play · app store · huawei · amazon",
+        title: "Ad Mediation & Cross-Promotion Plugins",
+        kicker: "admob · ironsource · applovin · custom plugins",
         blurb:
-          "Built automated deployment pipelines, signing configurations, and multi-account build processes across Google Play, Apple App Store, Huawei AppGallery, and Amazon Appstore.",
+          "Engineered a proprietary Unity Ad Mediation system unifying 6 major ad networks (AdMob, ironSource, AppLovin, Unity Ads, FAN, Chartboost) and a custom cross-promotion plugin to maximize eCPMs.",
       },
       {
-        title: "Full-Stack & Game Architecture",
-        kicker: "unity · laravel · react · web3",
+        title: "Multi-Genre Architecture at Scale",
+        kicker: "unity · c# · 200+ games · multiplayer",
         blurb:
-          "Designed modular game architectures, RESTful API gateways, dynamic database models, and Web3 crypto integrations across 220+ titles and enterprise platforms.",
+          "Built reusable game frameworks, multiplayer state systems, and UI architectures across 200+ titles spanning 2D, 3D, RPG, Narrative/Story, and Idle Clicker genres.",
+      },
+      {
+        title: "Engine & Asset Optimization",
+        kicker: "texture atlasing · shaders · apk optimization",
+        blurb:
+          "Reduced APK/IPA build sizes and improved GPU frame rates via asset reverse-engineering, texture atlasing, low-level mesh reduction, and custom mobile shader setups.",
+      },
+      {
+        title: "Multi-Store CI/CD & Deployment",
+        kicker: "play console · app store · huawei · amazon",
+        blurb:
+          "Configured automated build deployments, Android key signing pipelines, and store distribution workflows across Google Play, Apple App Store, Huawei AppGallery, and Amazon Appstore.",
       },
     ],
     pm: [
