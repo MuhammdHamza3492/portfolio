@@ -19,30 +19,26 @@
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16"/>
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
     </radialGradient>
-    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="0.35"/>
-    </filter>
+    <clipPath id="circle">
+      <circle cx="32" cy="32" r="32"/>
+    </clipPath>
   </defs>
 
-  <!-- Rounded app-icon base -->
-  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
-  <rect width="64" height="64" rx="14" fill="url(#glow)"/>
-  <rect width="64" height="64" rx="14" fill="url(#spot)"/>
+  <g clip-path="url(#circle)">
+    <circle cx="32" cy="32" r="32" fill="url(#bg)"/>
+    <circle cx="32" cy="32" r="32" fill="url(#glow)"/>
+    <circle cx="32" cy="32" r="32" fill="url(#spot)"/>
+    <path d="M10 48 C22 56, 42 56, 54 46" fill="none" stroke="#57e3a0"
+          stroke-opacity="0.55" stroke-width="1.6" stroke-linecap="round"/>
+    <text x="32" y="41.5"
+          text-anchor="middle"
+          font-family="Arial Black, Helvetica Neue, Arial, sans-serif"
+          font-size="26"
+          font-weight="800"
+          letter-spacing="-1.2"
+          fill="url(#mh)">MH</text>
+  </g>
 
-  <!-- Thin inner rim -->
-  <rect x="1.25" y="1.25" width="61.5" height="61.5" rx="12.75"
-        fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-
-  <!-- Accent arc -->
-  <path d="M10 48 C22 56, 42 56, 54 46" fill="none" stroke="#57e3a0"
-        stroke-opacity="0.55" stroke-width="1.6" stroke-linecap="round"/>
-
-  <!-- MH mark -->
-  <text x="32" y="41.5"
-        text-anchor="middle"
-        font-family="Arial Black, Helvetica Neue, Arial, sans-serif"
-        font-size="26"
-        font-weight="800"
-        letter-spacing="-1.2"
-        fill="url(#mh)">MH</text>
+  <!-- Crisp circular rim -->
+  <circle cx="32" cy="32" r="31.25" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.25"/>
 </svg>
