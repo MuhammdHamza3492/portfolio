@@ -14,7 +14,7 @@ window.PORTFOLIO = {
   headlineTail: "that scale.",
   sub: {
     engineer: "Muhammad Hamza — <b>AI + SaaS Builder + Senior Software Engineer</b>",
-    pm: "Muhammad Hamza — <b>Operations / Project / Business Development Manager</b>",
+    pm: "Best at — <b>Project + Business Development Manager</b>",
   },
   intro: {
     engineer:
