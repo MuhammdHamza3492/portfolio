@@ -72,6 +72,9 @@
     const verb = $("[data-bind=verb]");
     if (verb) verb.textContent = voice === "pm" ? "ship" : "build";
 
+    const sub = $("[data-bind=sub]");
+    if (sub) sub.innerHTML = data.sub[voice] || data.sub;
+
     renderSkills();
     renderWords();
   }
@@ -109,7 +112,7 @@
     });
 
     const sub = $("[data-bind=sub]");
-    if (sub) sub.innerHTML = data.sub;
+    if (sub) sub.innerHTML = data.sub[voice] || data.sub;
 
     renderSkills();
 

@@ -1,7 +1,7 @@
 window.PORTFOLIO = {
   name: "Muhammad Hamza",
   initials: "MH",
-  title: "Senior Game Developer",
+  title: "AI + SaaS Builder + Senior Software Engineer",
   titleAlt: "Operations Manager",
   status: "available",
   year: "2026",
@@ -12,7 +12,10 @@ window.PORTFOLIO = {
   headlineWords: ["games", "systems", "products", "platforms"],
   headlineWordsPm: ["operations", "projects", "products", "teams"],
   headlineTail: "that scale.",
-  sub: "Muhammad Hamza — <b>Operations / Project / Business Development Manager</b>",
+  sub: {
+    engineer: "Muhammad Hamza — <b>AI + SaaS Builder + Senior Software Engineer</b>",
+    pm: "Muhammad Hamza — <b>Operations / Project / Business Development Manager</b>",
+  },
   intro: {
     engineer:
       "With <b>8 years</b> across game development, software delivery, and live operations — I build and ship products end-to-end, from Unity architecture and store publishing to the platforms that keep them running. I move fluently between code, release, and the operational systems around the product.",
