@@ -278,8 +278,16 @@ header {
 .stat-value .accent, .cardStat .accent { color: var(--accent); }
 .stat-label, .cardStat .k { font-family: var(--mono); font-size: 11px; color: var(--text-3); }
 
-.stack, .skill-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
-.skill-group { width: 100%; margin-top: 6px; align-items: center; }
+.stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.skill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  margin-top: 10px;
+  align-items: center;
+}
+.skill-group:first-child { margin-top: 0; }
 .skill-group-label {
   font-family: var(--mono);
   font-size: 10px;
