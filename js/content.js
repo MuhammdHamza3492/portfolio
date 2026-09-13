@@ -354,12 +354,12 @@ window.PORTFOLIO = {
   },
   about: {
     engineer: [
-      "I started as a <b>game developer</b> — Unity, C#, multiplayer, store consoles — and grew into the person who also owns the operation around the product. That mix is the point: I can sit in a sprint with engineers, then walk into a provider or budget meeting without a translator.",
-      "At <b>AnteChip in Dubai</b> I ran live iGaming operations. Before that I delivered 10+ concurrent software projects at CodeXLayer and shipped games with <b>5M+</b> downloads. Tools I actually use: Unity, Laravel/PHP, React, Jira, Monday.com, AWS, and the store consoles.",
+      "I started as a hands-on <b>game developer</b> — mastering Unity, C#, low-level asset profiling, and multiplayer networking — and evolved into a full-stack architect who builds platforms at scale. That dual background is my core strength: I can write low-level C# game logic, build high-throughput Laravel/Node API gateways, and optimize AWS infrastructure without breaking context.",
+      "At <b>Antechip in Dubai</b>, I engineered enterprise iGaming platforms and Web3 systems handling <b>100k+ daily bets</b> and <b>$3M/day transactional volume</b>. Previously, at <b>CodeXLayer</b>, I built custom ad mediation engines and led technical execution across <b>200+ titles</b>, generating <b>50M+ downloads</b>. Core stack: Unity (C#), Laravel/PHP, React, Node.js, PostgreSQL, AWS, Docker, and native Mobile Ad SDKs.",
     ],
     pm: [
-      "I've spent <b>8 years</b> at the intersection of operations, project delivery, and business development. I plan the work, run the team, keep the stakeholder conversation honest, and still understand the build well enough to unblock it.",
-      "Most recently I was <b>Operations Manager at AnteChip, Dubai</b> — Agile delivery, provider partnerships, CRM and payments, budgeting, and a team I grew and kept. Before that: Project Manager at CodeXLayer (95% on-time across 10+ workstreams) and senior game development leadership. Based in Dubai. Open to operations, programme, and BD leadership roles.",
+      "Over the past <b>8 years</b>, I’ve led product delivery, team scaling, and revenue operations across mobile gaming, iGaming, and Web3. My edge lies in my technical roots: I can lead strategic executive roadmap meetings, structure global B2B partnerships, and step straight into an engineering sprint to unblock low-level architecture bottlenecks.",
+      "Most recently as <b>Technical Project Manager at Antechip (Dubai)</b>, I directed 5 concurrent cross-functional teams (30+ engineers) across Web3 kart racing, custom slot engines, and B2B API distribution. Prior to that at <b>CodeXLayer</b>, I scaled engineering operations from <b>3 to 60+ team members</b>, delivered <b>200+ projects</b>, generated <b>$1M+ in revenue</b>, and established a new B2B agency division. Open to Senior Technical Project Management, Program Leadership, and Operations roles.",
     ],
   },
   contact: {
