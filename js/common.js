@@ -209,23 +209,29 @@
     if (!wrap) return;
     const list =
       voice === "pm" && data.headlineWordsPm ? data.headlineWordsPm : data.headlineWords;
-    wrap.innerHTML = list
-      .map((w, i) => `<span class="wr-w${i === 0 ? " is-on" : ""}">${w}</span>`)
-      .join("");
-    rotateWords();
+    wrap.innerHTML = `<span class="wr-w">${list[0]}</span>`;
+    rotateWords(list);
   }
 
-  function rotateWords() {
+  function rotateWords(list) {
     const wrap = $("[data-bind=words]");
     if (!wrap) return;
     clearInterval(wordTimer);
-    const items = $$(".wr-w", wrap);
-    if (items.length < 2) return;
+    if (!list || list.length < 2) return;
     let i = 0;
     wordTimer = setInterval(() => {
-      items[i].classList.remove("is-on");
-      i = (i + 1) % items.length;
-      items[i].classList.add("is-on");
+      const current = $(".wr-w", wrap);
+      if (!current) return;
+      i = (i + 1) % list.length;
+      current.classList.add("is-exit");
+      window.setTimeout(() => {
+        current.textContent = list[i];
+        current.classList.remove("is-exit");
+        current.classList.add("is-enter");
+        // force reflow so enter transition runs
+        void current.offsetWidth;
+        current.classList.remove("is-enter");
+      }, 280);
     }, 2600);
   }
 
