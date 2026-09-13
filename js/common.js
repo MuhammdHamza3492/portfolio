@@ -350,13 +350,8 @@
   }
 
   function setupVoice() {
-    $$("[data-voice-btn]").forEach((btn) => {
-      btn.addEventListener("click", () => setVoice(btn.dataset.voiceBtn));
-    });
-    window.addEventListener("popstate", (event) => {
-      const next = event.state?.voice || voiceFromLocation();
-      setVoice(next, { updateUrl: false });
-    });
+    // SE/PM toggle is hidden — voice is locked to URL (/SE or /PM) or page default.
+    // No click handlers so visitors cannot switch profiles.
   }
 
   let revealObserver;

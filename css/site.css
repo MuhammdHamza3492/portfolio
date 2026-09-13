@@ -147,13 +147,9 @@ header {
 .who { font-family: var(--mono); font-size: 12px; color: var(--text-2); line-height: 1.2; }
 .who b { display: block; color: var(--text); font-size: 13px; font-weight: 600; letter-spacing: 0.02em; }
 
-.actions { display: flex; align-items: center; gap: 10px; }
+.actions { display: none; }
 .toggle {
-  display: inline-flex;
-  padding: 3px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 0.5px solid var(--line);
-  border-radius: 10px;
+  display: none;
 }
 .toggle button {
   font-family: var(--mono);

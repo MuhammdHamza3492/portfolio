@@ -14,7 +14,7 @@ window.PORTFOLIO = {
   headlineTail: "that scale.",
   sub: {
     engineer: "Best at — <b>AI + SaaS + Applications + Software + Web</b>",
-    pm: "Best at — <b>Project + Business Development</b>",
+    pm: "Best at — <b>Project Management</b>",
   },
   intro: {
     engineer:
