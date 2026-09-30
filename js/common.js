@@ -54,6 +54,7 @@
   function setVoice(next, opts = {}) {
     if (next !== "engineer" && next !== "pm") return;
     voice = next;
+    document.documentElement.dataset.voice = voice;
     $$("[data-voice-btn]").forEach((btn) => {
       btn.classList.toggle("on", btn.dataset.voiceBtn === voice);
     });
@@ -404,6 +405,39 @@
     });
   }
 
+  function setupIntroVideo() {
+    const overlay = $("[data-video-overlay]");
+    const video = $("[data-intro-video]");
+    const playBtn = $("[data-video-play]");
+    const openBtns = $$("[data-open-video]");
+    if (!overlay || !video || !openBtns.length) return;
+
+    const play = () => {
+      video.controls = true;
+      video.play().catch(() => {});
+    };
+    const close = () => {
+      overlay.classList.remove("open");
+      video.pause();
+    };
+
+    openBtns.forEach((btn) => btn.addEventListener("click", () => overlay.classList.add("open")));
+    playBtn?.addEventListener("click", play);
+    video.addEventListener("click", () => {
+      if (!video.controls) play();
+    });
+    video.addEventListener("play", () => overlay.classList.add("playing"));
+    video.addEventListener("pause", () => overlay.classList.remove("playing"));
+    video.addEventListener("ended", () => overlay.classList.remove("playing"));
+    $("[data-close-video]")?.addEventListener("click", close);
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && overlay.classList.contains("open")) close();
+    });
+  }
+
   function setupSpotlight() {
     const spot = $("[data-spotlight]");
     if (!spot) return;
@@ -641,6 +675,7 @@
   setupMore();
   setupLightbox();
   setupIntro();
+  setupIntroVideo();
   setupHeader();
   setupProgress();
   setupSpotlight();

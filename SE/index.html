@@ -13,7 +13,7 @@
     <link rel="icon" href="images/favicon-32.png?v=31" type="image/png" sizes="32x32" />
     <link rel="shortcut icon" href="images/favicon.ico?v=31" />
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=31" sizes="180x180" />
-    <link rel="stylesheet" href="css/site.css?v=31" />
+    <link rel="stylesheet" href="css/site.css?v=34" />
   </head>
   <body>
     <div id="progress" data-progress></div>
@@ -36,6 +36,13 @@
             <button type="button" data-voice-btn="engineer">SE</button>
             <button type="button" data-voice-btn="pm">PM</button>
           </div>
+          <button class="intro-btn" type="button" data-open-video>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6.25" stroke="currentColor" stroke-width="1.2" />
+              <polygon points="5.5,4.5 10,7 5.5,9.5" fill="currentColor" />
+            </svg>
+            Watch intro
+          </button>
         </div>
       </div>
     </header>
@@ -98,6 +105,24 @@
       </div>
     </div>
 
+    <div class="overlay" data-video-overlay>
+      <div class="video-modal" role="dialog" aria-label="Intro video">
+        <button class="modal-close" type="button" data-close-video aria-label="Close">✕</button>
+        <video
+          data-intro-video
+          src="PM/Video/intro.mp4?v=1"
+          poster="PM/Video/intro-poster.jpg?v=1"
+          preload="none"
+          playsinline
+        ></video>
+        <button class="video-play" type="button" data-video-play aria-label="Play intro video">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <polygon points="10,7 22,14 10,21" fill="currentColor" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
     <div class="lb-overlay" id="lb-overlay" hidden>
       <div class="lb-box">
         <div class="lb-head">
@@ -126,7 +151,7 @@
 
     <script>window.__INITIAL_VOICE = "engineer";</script>
     <script src="js/content.js?v=31"></script>
-    <script src="js/common.js?v=31"></script>
+    <script src="js/common.js?v=34"></script>
     <script src="js/hero3d.js?v=31"></script>
   </body>
 </html>
